@@ -4,7 +4,7 @@ $(document).ready(function(){
     $.ajax({
         method: "GET",
         url: "https://newsapi.org/v2/sources",
-        data: { category: "business", country: "us", language: "en", apiKey: "3820fecb5ce54f10a2473ac3bee90c76" },
+        data: { category: "business", country: "us", language: "en", apiKey: APIKEY},
         //top: {},
         success: function(data) {
             if (data.status === "ok") {
@@ -28,7 +28,7 @@ $(document).ready(function(){
     $.ajax({
         method: "GET",
         url: "https://newsapi.org/v2/top-headlines",
-        data: {sources: document.getElementById("selection").value, apiKey: "3820fecb5ce54f10a2473ac3bee90c76" }, 
+        data: {sources: document.getElementById("selection").value, apiKey: APIKEY}, 
         success: function(data) {
             if (data.status === "ok") {
                     console.log(data);
